@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 15:22:18 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/19 23:45:23 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:42:36 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <stddef.h>
+# include <stdarg.h>
+
+// ----------------------- libft ------------------------//
 
 // "mandatory prototypes start!!"
 int					ft_isalnum(const int c);
@@ -79,5 +84,31 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
 // "bonus part end !!"
+
+// --------------------------- get_next_line -------------//
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+char				*get_next_line(int fd);
+char				*ft_str_get_join(char *s1, char *s2);
+char				*copy_line(char *line);
+char				*new_line(char *old_line);
+
+// -------------------------- get_next_line --------------//
+
+// -------------------------- ft_printf ------------------//
+int					ft_putstr(char *str);
+int					ft_putchar(int c);
+int					ft_putnbr(int n);
+int					ft_printhex(size_t n, size_t base, char c);
+int					ft_putunbr(unsigned int n);
+int					ft_putptr(size_t n);
+int					ft_printf(const char *input, ...);
+
+// -------------------------- ft_printf ------------------//
+
+// ----------------------- libft ------------------------//
 
 #endif
